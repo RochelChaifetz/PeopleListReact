@@ -51,20 +51,26 @@ class People extends React.Component {
                     lastName={this.state.lastName}
                     age={this.state.age} />
 
-                {this.state.people.length === 0 ?
-                    <h1>No people added yet! Add some people!</h1> :
-                    <table className='table table-hover table-striped table-bordered'>
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Age</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <PersonRow people={this.state.people} />
-                        </tbody>
-                    </table>
+                {this.state.people.length === 0 ? (
+                    <div>
+                        <h1>No people added yet! Add some people!</h1>
+                    </div>
+                ) : (
+                    <div>
+                        <table className='table table-hover table-striped table-bordered'>
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <PersonRow people={this.state.people} />
+                            </tbody>
+                        </table>
+                    </div>
+                )
                 }
             </div>
         </>);
